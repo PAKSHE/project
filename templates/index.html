@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Button!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background: linear-gradient(to bottom right, #ffd6e7, #ffe0f5);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #cc3366;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-family: 'Kanit', sans-serif;
+      padding: 20px 40px;
+      font-size: 20px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    #buttonA {
+      background-color: #ff0059;
+      color: white;
+    }
+
+    #buttonA:hover {
+      background-color: #ff176c;
+      transform: scale(1.05);
+    }
+
+    #buttonB {
+      background-color: #00ca4e;
+      color: white;
+    }
+
+    #buttonB:hover {
+      background-color: #03c03c;
+      transform: scale(1.05);
+    }
+
+    #valentine-gif {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <div class="button-row">
+    <button id="buttonA">No</button>
+    <div id="buttonB-container">
+      <button id="buttonB">Yes</button>
+    </div>
+  </div>
+
+  <img id="valentine-gif" src="https://media.giphy.com/media/3ov9k0OmfNYeLdK4gg/giphy.gif" alt="valentine gif" />
+
+  <script>
+    const buttonA = document.getElementById("buttonA");
+    const buttonB = document.getElementById("buttonB");
+    const container = document.getElementById("buttonB-container");
+
+    let size = 1;
+    const maxSize = 100;
+    let exploded = false;
+  
+    const messages = [
+      "คิดใหม่อีกรอบ...",
+      "ยังไม่แน่ใจหรอ?",
+      "ไม่ได้นะ!",
+      "ใจอ่อนเถอะ~",
+      "แน่ใจจริงๆหรอ",
+      "ได้โปรดดดด 😢",
+      "ขอร้องล่ะ~",
+      "ได้โปรดเถอะ!!",
+      "โอ้ยยยย!",
+      "ทำไมใจร้ายแบบนี้ 😢"
+    ];
+
+    buttonA.addEventListener("click", () => {
+      if (exploded) return;
+
+      size += 0.3;
+
+      if (size >= maxSize) {
+        exploded = true;
+        container.innerHTML = "<h2 style='color:#cc3366;'>พี่จ๋าาาาา 😭</h2>";
+        buttonA.innerText = "Too late...";
+        buttonA.style.transform = "translateX(0px)";
+      } else {
+        buttonB.style.transform = `scale(${size})`;
+
+        const offset = (size - 1) * 50;
+        buttonA.style.transform = `translateX(-${offset}px)`;
+
+        const index = Math.min(Math.floor((size - 1) / 0.3), messages.length - 1);
+        buttonA.innerText = messages[index];
+      }
+    });
+
+    buttonB.addEventListener("click", () => {
+      if (!exploded) {
+        window.location.href = "/project/templates/next.html";
+      }
+    });
+  </script>
+
+</body>
+</html>
