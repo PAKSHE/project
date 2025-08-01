@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- แก้จุดนี้ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
   <title>Valentine Button!</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
+    }
+    html {
+      -webkit-text-size-adjust: 100%; /* ป้องกันการปรับขนาดฟอนต์อัตโนมัติของ Safari */
     }
     html, body {
       height: 100%;
@@ -18,31 +22,33 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 20px;
+      text-align: center;
     }
-
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
+      font-size: 2rem;
+      margin-bottom: 20px;
       color: #cc3366;
     }
 
     .button-row {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
+      gap: 16px;
+      margin-bottom: 30px;
       flex-wrap: wrap;
     }
 
     button {
       font-family: 'Kanit', sans-serif;
-      padding: 20px 40px;
-      font-size: 20px;
+      padding: 16px 32px;
+      font-size: 18px;
       border-radius: 12px;
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 120px;
     }
 
     #buttonA {
@@ -66,10 +72,21 @@
     }
 
     #valentine-gif {
+      width: 100%;
       max-width: 300px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       margin-top: 20px;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      button {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -94,7 +111,7 @@
     let size = 1;
     const maxSize = 100;
     let exploded = false;
-  
+
     const messages = [
       "คิดใหม่อีกรอบ...",
       "ยังไม่แน่ใจหรอ?",
