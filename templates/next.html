@@ -28,15 +28,15 @@
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.2rem;   /* เริ่มต้นสำหรับมือถือ */
       color: #fa618f;
       margin-bottom: 30px;
       text-shadow: 1px 1px 2px #f7a7a7;
     }
 
     #valentine-gif {
-      width: 250px;
-      max-width: 80%;
+      width: 100%;
+      max-width: 400px;   /* บนจอใหญ่ไม่ให้เกิน 400px */
       border-radius: 20px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       margin-bottom: 40px;
@@ -44,8 +44,8 @@
 
     .button {
       display: inline-block;
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 18px 30px;
+      font-size: 20px;
       background-color: #28c76f;
       color: white;
       border: none;
@@ -53,19 +53,37 @@
       text-decoration: none;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
       box-shadow: 0 6px 12px rgba(40, 199, 111, 0.3);
+      width: 100%;
+      max-width: 300px;   /* ปุ่มไม่ใหญ่เกินไปบน desktop */
+      text-align: center;
     }
 
     .button:hover {
       transform: scale(1.05);
       box-shadow: 0 10px 20px rgba(40, 199, 111, 0.5);
     }
+
+    /* สำหรับ tablet/desktop */
     @media (min-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .button {
+        font-size: 22px;
+        padding: 20px 40px;
+      }
+    }
+
+    /* สำหรับมือถือจอเล็กมาก */
+    @media (max-width: 480px) {
       h1 {
         font-size: 2.5rem;
       }
 
-      button {
-        font-size: 20px;
+      .button {
+        font-size: 18px;
+        padding: 15px 20px;
       }
     }
   </style>
