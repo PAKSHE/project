@@ -1,94 +1,116 @@
 <head>
   <meta charset="UTF-8">
-  <!-- แก้จุดนี้ -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <title>Valentine Button!</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    html {
-      -webkit-text-size-adjust: 100%; /* ป้องกันการปรับขนาดฟอนต์อัตโนมัติของ Safari */
-    }
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Kanit', sans-serif;
-      background: linear-gradient(to bottom right, #ffd6e7, #ffe0f5);
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #cc3366;
-    }
+ <style>
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(to bottom right, #ffd6e7, #ffe0f5);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
 
-    .button-row {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #cc3366;
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  button {
+    font-family: 'Kanit', sans-serif;
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 120px;
+    max-width: 90vw;
+    word-break: break-word;
+  }
+
+  #buttonA {
+    background-color: #ff0059;
+    color: white;
+  }
+
+  #buttonA:hover {
+    background-color: #ff176c;
+    transform: scale(1.05);
+  }
+
+  #buttonB {
+    background-color: #00ca4e;
+    color: white;
+  }
+
+  #buttonB:hover {
+    background-color: #03c03c;
+    transform: scale(1.05);
+  }
+
+  #valentine-gif {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-top: 20px;
+  }
+
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
     }
 
     button {
-      font-family: 'Kanit', sans-serif;
-      padding: 16px 32px;
-      font-size: 18px;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      min-width: 120px;
+      font-size: 16px;
+      padding: 12px 24px;
     }
 
-    #buttonA {
-      background-color: #ff0059;
-      color: white;
+    .button-row {
+      gap: 12px;
+    }
+  }
+
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
     }
 
-    #buttonA:hover {
-      background-color: #ff176c;
-      transform: scale(1.05);
+    button {
+      font-size: 20px;
     }
+  }
+</style>
 
-    #buttonB {
-      background-color: #00ca4e;
-      color: white;
-    }
-
-    #buttonB:hover {
-      background-color: #03c03c;
-      transform: scale(1.05);
-    }
-
-    #valentine-gif {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      margin-top: 20px;
-    }
-
-    @media (min-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      button {
-        font-size: 20px;
-      }
-    }
-  </style>
 </head>
 <body>
 
